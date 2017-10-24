@@ -24,9 +24,8 @@ since `smb.conf` is used for both purposes.
 
 ## Setup Requirements
 
-The configuration used in this module requires Samba >= 3.6.
-[Bolt][bolt] is required if you want to use the
-included task to join machines to your domain.
+The configuration used in this module requires Samba >= 3.6. [Bolt][bolt] is
+required if you want to use the included task to join machines to your domain.
 
 
 ## Beginning with winbind
@@ -36,7 +35,7 @@ included task to join machines to your domain.
 This module does not join your machine to AD but does provide you a Puppet task
 to do so. The reason it is not done during a Puppet run is that we have not
 found a secure way to do the joins since they require a privileged account and
-its password. Having said that, below is a recommended method of putting this
+it's password. Having said that, below is a recommended method of putting this
 module to use that limits your manual work to running a single Puppet task with
 [Bolt][bolt]. The task can join one or many nodes to the domain in a single run.
 
@@ -54,10 +53,10 @@ module to use that limits your manual work to running a single Puppet task with
 
 #### Alternate joinDomain.sh templates
 
-This module contains scripts for joing mahcines in the Red Hat and SUSE families
-to a domain. If you would rather use your own scripts then be sure to add
-`winbind::manage_joindomain_script: false` to your common.yaml file. If, on the
-other hand, you simply find that the scripts in here could be improved or
+This module contains scripts for joining machines in the Red Hat and SUSE
+families to a domain. If you would rather use your own scripts then be sure to
+add `winbind::manage_joindomain_script: false` to your common.yaml file. If, on
+the other hand, you simply find that the scripts in here could be improved or
 expanded then please send us a pull request on GitHub.
 
 #### Configuring SMB shares
@@ -117,7 +116,7 @@ There is a parameter that corresponds directly to each setting in the four
 configuration files that get edited by this module. Each is prefixed
 so that you know which file it effects:
 
-* pam     = /etc/security/pam_winbind.con
+* pam     = /etc/security/pam_winbind.conf
 * smb     = /etc/samba/smb.conf
 * krb5    = /etc/krb5.conf
 * oddjobd = /etc/oddjobd.conf.d/oddjobd-mkhomedir.conf
@@ -194,7 +193,8 @@ Pull requests are welcome!
 
 * Adam Stephens (@adamcstephens) - Added support for toggling service management
   and overriding the package ensure setting
-* Jake Spain (@thespain) - Added support for SLES 11 & 12
+* Jake Spain (@thespain) - Added support for SLES 11 & 12. Jake is also now a
+  maintainer of this module.
 
 
 [bolt]: https://github.com/puppetlabs/bolt

@@ -1,5 +1,15 @@
 [![GitHub tag][gh-tag-img]][gh-link]
 
+## 2017-10-23 - Release 2.0.0  
+- Dropped support for Puppet 3
+- Code updated to the Puppet 4 language
+- Hiera 5 in module data implemented to replace `params.pp`
+- Expanded testing via rspec-puppet-facts to cover all supported OS's listed in
+  `metadata.json`
+- 100% test coverage against Puppet 4, Puppet 5, and Puppet 5 with strict
+  variables.
+- Updated again with modulesync
+
 ## 2017-10-11 - Release 1.6.1  
 - Fixed syntax error in the join domain scripts
 
